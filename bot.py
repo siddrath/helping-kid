@@ -10,7 +10,7 @@ import random
 from discord.ext import commands
 from PIL import Image, ImageDraw, ImageFont
 
-bot = commands.Bot(description='BAsics can do a lot more.....', command_prefix=commands.when_mentioned_or('f!'))
+bot = commands.Bot(description='BAsics can do a lot more.....', command_prefix=commands.when_mentioned_or('gc!'))
 
 
 class BAsics():
@@ -18,7 +18,7 @@ class BAsics():
     @commands.command()
     async def owner(self, ctx):
         ': Name of my creator'
-        await ctx.send('My owner is <@392337139309871106> ')
+        await ctx.send('My owner is <@409340532675051531> ')
         await ctx.message.delete()
 
     @commands.command()
@@ -33,7 +33,7 @@ class BAsics():
     @commands.command(pass_contex=True)
     async def invite(self, ctx):
         ': Invite me '
-        await ctx.send('https://discordapp.com/oauth2/authorize?client_id=394080286461263873&scope=bot&permissions=1543687243')
+        await ctx.send('https://discordapp.com/oauth2/authorize?client_id=465828503267573761&scope=bot&permissions=999999')
 
     @commands.command()
     async def uptime(self,ctx):
@@ -291,7 +291,7 @@ async def code(ctx, command):
 
 @bot.command(hidden=True)
 async def reload(ctx, extension):
-    if ctx.author.id == 392337139309871106:
+    if ctx.author.id == 409340532675051531:
        try:
             bot.unload_extension(extension)
             bot.load_extension(extension)
@@ -304,26 +304,9 @@ async def reload(ctx, extension):
         await ctx.send("```You can't do it buddy you better know it```")
 
 
-@bot.event
-async def on_command_error(ctx, err):
-    if ctx.guild.id == 394087011641851905:
-        await ctx.channel.send(f'''```py\n{type(err).__name__}: {err!s}```''')
-    else:
-        return
 
 
-@bot.event
-async def on_member_join(member):
-        if member.guild.id == 453472827526479874:
-            channel = member.guild.get_channel(485835315194363925)
-            await channel.edit(name=f'Member Count: {len(member.guild.members)}')
 
-
-@bot.event
-async def on_member_remove(member):
-    if member.guild.id == 453472827526479874:
-        channel = member.guild.get_channel(485835315194363925)
-        await channel.edit(name=f'Member Count: {len(member.guild.members)}')
 
 
 @bot.event
